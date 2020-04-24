@@ -1,7 +1,7 @@
 //Hooks version in index.js replace App import with AppHooks
 
 import React, { useState, useEffect } from 'react';
-import { About, User, Home, UserHooks } from '../components';
+import { About, Home, UserHooks } from '../components';
 
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import axios from 'axios';
