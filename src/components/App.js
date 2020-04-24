@@ -7,7 +7,7 @@ import axios from 'axios';
 class App extends Component {
   state = {};
   componentDidMount() {
-    axios.get('http://api.tvmaze.com/search/shows?q=girls').then((results) => {
+    axios.get('http://api.tvmaze.com/search/shows?q=dogs').then((results) => {
       this.setState({
         results: results.data,
       });
@@ -17,22 +17,17 @@ class App extends Component {
     return (
       <Router>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-          <div style={{ width: '30%', marginRight: '50px' }}>
-            {this.state.results ? (
+          <div style={{ width: '30%', marginRight: '20px' }}>
+            {this.state.results &&
               this.state.results.map((item) => (
                 <div key={item.show.id}>
                   <Link to={`/user/${item.show.id}`}>{item.show.name}</Link>
                   <br />
                 </div>
-              ))
-            ) : (
-              <div>
-                <h2>Loading Data...</h2>
-              </div>
-            )}
+              ))}
           </div>
 
-          <div>
+          <div style={{ width: '65%' }}>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/about" component={About} />

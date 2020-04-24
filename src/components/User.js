@@ -27,14 +27,12 @@ class User extends Component {
   render() {
     return (
       <div>
-        {this.state.data ? (
+        {this.state.data && (
           <div>
             <h1>{this.state.data.name}</h1>
             <p>{this.state.data.summary}</p>
             <Link to={'/'}>Home</Link>
           </div>
-        ) : (
-          <h2>Loading...</h2>
         )}
       </div>
     );

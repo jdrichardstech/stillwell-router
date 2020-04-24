@@ -21,7 +21,14 @@ const App = () => {
           {data ? (
             data.map((item) => (
               <div key={item.show.id}>
-                <Link to={`/user/${item.show.id}`}>{item.show.name}</Link>
+                <Link
+                  to={{
+                    pathname: `/user/${item.show.id}`,
+                    state: data,
+                  }}
+                >
+                  {item.show.name}
+                </Link>
                 <br />
               </div>
             ))
