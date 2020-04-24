@@ -1,3 +1,5 @@
+//Hooks version in index.js replace App import with AppHooks
+
 import React, { useState, useEffect } from 'react';
 import { About, User, Home, UserHooks } from '../components';
 
